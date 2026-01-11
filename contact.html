@@ -17,20 +17,30 @@
        NAVBAR (reuse existing)
   ========================== -->
   <header class="navbar">
-    <div class="nav-container">
-      <div class="logo">
-        <img src="Vindru-LOGO-New.png" alt="VINDRU Logo">
-      </div>
+  <div class="nav-container">
 
-      <nav class="nav-links">
-        <a href="index.html">Home</a>
-        <a href="about.html">About Us</a>
-        <a href="products.html">Products</a>
-        <a href="services.html">Services</a>
-        <a href="contact.html"  class="active">Contact Us</a>
-      </nav>
+    <div class="logo">
+      <img src="Vindru-LOGO-New.png" alt="VINDRU">
     </div>
-  </header>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
+  </div>
+</header>
+
+<div class="menu-overlay" id="menuOverlay">
+  <nav class="menu-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</div>
 
   <section class="contact-page full-width">
   <div class="container contact-grid">
@@ -306,5 +316,20 @@ const observer = new IntersectionObserver(
 );
 
 revealElements.forEach(el => observer.observe(el));</script>
+
+<script>
+const toggle = document.getElementById("menuToggle");
+const overlay = document.getElementById("menuOverlay");
+
+toggle.addEventListener("click", () => {
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("active");
+});
+</script>
+
+
 </body>
 </html>
