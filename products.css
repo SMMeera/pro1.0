@@ -113,6 +113,17 @@ body {
 .hero-arrow.left { left: 24px; }
 .hero-arrow.right { right: 24px; }
 
+/* Mobile spacing fix for hero button */
+@media (max-width: 768px) {
+  .hero-slide p {
+    margin-bottom: 28px;   /* creates space above the button */
+  }
+
+  .hero-btn {
+    margin-top: 0;        /* remove extra push from top */
+  }
+}
+
 /* =========================
    PRODUCT DETAILS SECTION
 ========================= */
@@ -631,3 +642,4 @@ html, body {
     margin-right: auto;
   }
 }
+
