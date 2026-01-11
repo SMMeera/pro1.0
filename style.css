@@ -114,10 +114,13 @@ section, header, footer, main {
 /* =========================
    NAVBAR – RESPONSIVE MASTER
 ========================= */
+/* ===============================
+   GLOBAL HAMBURGER NAVBAR
+================================ */
 
 .navbar {
   width: 100%;
-  background: #ffffff;
+  background: white;
   position: sticky;
   top: 0;
   z-index: 1000;
@@ -129,59 +132,70 @@ section, header, footer, main {
   margin: 0 auto;
   padding: 16px 32px;
   display: flex;
-  align-items: center;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo img {
-  height: 44px;
+  height: 42px;
 }
 
-.nav-links {
+/* HAMBURGER */
+.menu-toggle {
+  width: 28px;
+  height: 20px;
   display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  cursor: pointer;
+}
+
+.menu-toggle span {
+  height: 3px;
+  background: #0f172a;
+  border-radius: 2px;
+}
+
+/* ===============================
+   FULLSCREEN MENU
+================================ */
+
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(5,15,30,0.95);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 0;
+  pointer-events: none;
+  transition: 0.4s ease;
+  z-index: 2000;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+.menu-links {
+  display: flex;
+  flex-direction: column;
   gap: 32px;
+  text-align: center;
 }
 
-.nav-links a {
-  text-decoration: none;
-  font-size: 15px;
+.menu-links a {
+  font-size: 28px;
   font-weight: 600;
-  color: #0f172a;
-  position: relative;
+  color: white;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
-.nav-links a.active {
+.menu-links a:hover {
   color: #f97316;
 }
-
-/* =========================
-   MOBILE NAVBAR
-========================= */
-@media (max-width: 768px) {
-
-  .nav-container {
-    flex-direction: column;
-    align-items: center;
-    padding: 14px 16px;
-    gap: 14px;
-  }
-
-  .logo img {
-    height: 36px;
-  }
-
-  .nav-links {
-    width: 100%;
-    justify-content: space-between;
-    gap: 0;
-    padding: 0 10px;
-  }
-
-  .nav-links a {
-    font-size: 14px;
-  }
-}
-
 /* HERO */
 /* =========================
    HERO SECTION
