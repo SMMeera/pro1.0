@@ -102,6 +102,14 @@ body {
   z-index: 5;
 }
 
+@media (max-width: 768px) {
+  .hero-btn {
+    padding: 12px 28px;
+    border-radius: 22px;
+    font-size: 15px;
+  }
+}
+
 .hero-arrow.left { left: 24px; }
 .hero-arrow.right { right: 24px; }
 
