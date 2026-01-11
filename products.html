@@ -12,18 +12,29 @@
 
 <header class="navbar">
   <div class="nav-container">
+
     <div class="logo">
-      <img src="Vindru-LOGO-New.png" alt="VINDRU Logo">
+      <img src="Vindru-LOGO-New.png" alt="VINDRU">
     </div>
-    <nav class="nav-links">
-      <a href="index.html">Home</a>
-      <a href="about.html">About Us</a>
-      <a href="products.html" class="active">Products</a>
-      <a href="services.html">Services</a>
-      <a href="contact.html">Contact Us</a>
-    </nav>
+
+    <div class="menu-toggle" id="menuToggle">
+      <span></span>
+      <span></span>
+      <span></span>
+    </div>
+
   </div>
 </header>
+
+<div class="menu-overlay" id="menuOverlay">
+  <nav class="menu-links">
+    <a href="index.html">Home</a>
+    <a href="about.html">About Us</a>
+    <a href="products.html">Products</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact Us</a>
+  </nav>
+</div>
 
 <!-- =========================
      PRODUCT HERO SLIDER
@@ -258,6 +269,19 @@ document.querySelector('.hero-arrow.left').onclick = () => {
   );
 
   revealElements.forEach(el => revealObserver.observe(el));
+</script>
+
+<script>
+const toggle = document.getElementById("menuToggle");
+const overlay = document.getElementById("menuOverlay");
+
+toggle.addEventListener("click", () => {
+  overlay.classList.toggle("active");
+});
+
+overlay.addEventListener("click", () => {
+  overlay.classList.remove("active");
+});
 </script>
 
 </body>
